@@ -6,6 +6,8 @@ import SearchMap from './SearchMap/SearchMap';
 import Home from './Home/Home';
 import Message from './Message/Message';
 import Chat from './Chat/Chat';
+import Setting from './Setting/Setting';
+import FilterMyList from './FilterMyList/FilterMyList';
 export {
     Login,
     Signup,
@@ -14,5 +16,7 @@ export {
     SearchMap,
     Home,
     Message,
-    Chat
+    Chat,
+    Setting,
+    FilterMyList
 }
