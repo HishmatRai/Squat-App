@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login,Signup,WhatWouldYouLike,WhereYouAre,SearchMap,Home,Message } from './../Screens/index';
+import { Login,Signup,WhatWouldYouLike,WhereYouAre,SearchMap,Home,Message,Chat } from './../Screens/index';
 const Stack = createStackNavigator();
 function App() {
     return (
@@ -13,7 +13,8 @@ function App() {
                 {/* <Stack.Screen name="WhereYouAre" component={WhereYouAre} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen name="SearchMap" component={SearchMap} options={{ headerShown: false }} /> */}
                 {/* <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
-                <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} />
+                {/* <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} /> */}
+                <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );

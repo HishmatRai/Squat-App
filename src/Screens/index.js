@@ -5,6 +5,7 @@ import WhereYouAre from './WhereYouAre/WhereYouAre';
 import SearchMap from './SearchMap/SearchMap';
 import Home from './Home/Home';
 import Message from './Message/Message';
+import Chat from './Chat/Chat';
 export {
     Login,
     Signup,
@@ -12,5 +13,6 @@ export {
     WhereYouAre,
     SearchMap,
     Home,
-    Message
+    Message,
+    Chat
 }
