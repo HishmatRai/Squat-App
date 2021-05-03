@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-export default function WhereYouAre() {
+export default function WhereYouAre(props) {
     return (
         <View style={styles.container}>
             {/* <<<<<<<< StatusBar >>>>>>>>> */}
@@ -19,15 +19,15 @@ export default function WhereYouAre() {
                     <Text style={styles._heading}>Where you are?</Text>
 
                     {/* <<<<<<<< SEARCH BUTTON >>>>>>>>> */}
-                    <TouchableOpacity style={styles._search_button}>
+                    <TouchableOpacity style={styles._search_button} onPress={() => props.navigation.navigate("SearchMap")}>
                         <Text style={styles._search_button_text}>Search Location</Text>
                     </TouchableOpacity>
                     <Text style={styles._or}>OR</Text>
-                    <TouchableOpacity style={styles._current_location_button}>
+                    <TouchableOpacity style={styles._current_location_button}  onPress={() => props.navigation.navigate("FilterMyList")}>
                         <Text style={styles._search_button_text}>Use current  location</Text>
                     </TouchableOpacity>
                     {/* <<<<<<<< GO >>>>>>>>> */}
-                    <TouchableOpacity style={styles._go_button}>
+                    <TouchableOpacity style={styles._go_button} onPress={() => props.navigation.navigate("Home")}>
                         <Entypo name="chevron-thin-right" size={44} color="white" />
                     </TouchableOpacity>
                     <View style={{ marginBottom: 20 }}></View>

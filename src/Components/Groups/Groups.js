@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
-export default function Groups() {
+export default function Groups(props) {
     let chatCard = [
         { profile: require('./../../img/messageProfile.jpg'), userName: "All Friends Group", userMessage: "  Quisque blandit arcu quis turpis tincidunt facilisis…", time: "15 min", unRead: "1", unreadShow: true, color: "#77838F" },
         { profile: require('./../../img/messageProfile.jpg'), userName: "MotivatorsPoint", userMessage: "  Quisque blandit arcu quis turpis tincidunt facilisis…", time: "32 min", unRead: "3", unreadShow: true, color: "white" },
@@ -23,7 +23,7 @@ export default function Groups() {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {chatCard.map((v, i) => {
                         return (
-                            <TouchableOpacity style={styles._chat_main}>
+                            <TouchableOpacity style={styles._chat_main} onPress={() => props.path.navigate("Chat")}>
                                 <View style={styles._profile_main}>
                                     <Image source={v.profile} style={styles._profile_images} />
                                 </View>

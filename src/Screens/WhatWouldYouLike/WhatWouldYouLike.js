@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import {  Entypo } from '@expo/vector-icons';
-export default function WhatWouldYouLike() {
+export default function WhatWouldYouLike(props) {
     return (
         <View style={styles.container}>
             {/* <<<<<<<< StatusBar >>>>>>>>> */}
@@ -31,18 +31,18 @@ export default function WhatWouldYouLike() {
                         <TouchableOpacity style={styles._buttons}>
                             <Text style={styles._buttons_text}>Sell</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._buttons}>
+                        <TouchableOpacity style={styles._buttons} onPress={() => props.navigation.navigate("Message")}>
                             <Text style={styles._buttons_text}>Chat</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles._buttons_main}>
-                        <TouchableOpacity style={styles._buttons}>
+                        <TouchableOpacity style={styles._buttons} onPress={() => props.navigation.navigate("Home")}>
                             <Text style={styles._buttons_text}>Explore</Text>
                         </TouchableOpacity>
                     </View>
 
                     {/* <<<<<<<< GO >>>>>>>>> */}
-                    <TouchableOpacity style={styles._go_button}>
+                    <TouchableOpacity style={styles._go_button}  onPress={() => props.navigation.navigate("WhereYouAre")}>
                         <Entypo name="chevron-thin-right" size={44} color="white" />
                     </TouchableOpacity>
                     <View style={{ marginBottom: 20 }}></View>

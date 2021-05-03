@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, StatusBar, ScrollView, TextInput, TouchableOpacity, Text } from 'react-native';
 import { FontAwesome, Feather, Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import Map from './../../Components/Map/Map';
-export default function FilterMyList() {
+export default function FilterMyList(props) {
     const [userName, onChangeUserName] = React.useState("");
     return (
         <View style={styles.container}>
@@ -30,7 +30,7 @@ export default function FilterMyList() {
                     <FontAwesome name="filter" size={20} color="#F6A800" />
                     <Text style={styles._filer_button_text}>Filter</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._filter_buttom}>
+                <TouchableOpacity style={styles._filter_buttom} onPress={() => props.navigation.navigate("FilterMyMap")}>
                     <Text style={styles._filer_button_text}>List</Text>
                 </TouchableOpacity>
             </View>
@@ -43,25 +43,25 @@ export default function FilterMyList() {
                 </ScrollView>
             </View>
             <View style={styles._custom_tab}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate("Home")}>
                     <Feather name="home" size={20} color="#6E6F8B" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._tabs}>
+                <TouchableOpacity style={styles._tabs} onPress={() => props.navigation.navigate("FilterMyList")}>
                     <Text style={styles._search_tab}>Searhing</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._tabs}>
+                <TouchableOpacity style={styles._tabs} onPress={() => props.navigation.navigate("SearchMap")}>
                     <Feather name="search" size={20} color="#6E6F8B" />
                     <Text style={styles._map_search_tab_heading}>Map Search</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._tabs}>
+                <TouchableOpacity style={styles._tabs} onPress={() => props.navigation.navigate("Message")}>
                     <Ionicons name="chatbubble-outline" size={20} color="#6E6F8B" />
                     <Text style={styles._map_search_tab_heading}>Chat</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._tabs}>
+                <TouchableOpacity style={styles._tabs} onPress={() => props.navigation.navigate("Home")}>
                     <AntDesign name="hearto" size={20} color="#6E6F8B" />
                     <Text style={styles._map_search_tab_heading}>Liked</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._tabs}>
+                <TouchableOpacity style={styles._tabs} onPress={() => props.navigation.navigate("Setting")}>
                     <Entypo name="dots-three-horizontal" size={20} color="#6E6F8B" />
                     <Text style={styles._map_search_tab_heading}>More</Text>
                 </TouchableOpacity>

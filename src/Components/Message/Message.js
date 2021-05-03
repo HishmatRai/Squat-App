@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
-export default function Message() {
+export default function Message(props) {
     let chatCard = [
         { profile: require('./../../img/messageProfile.jpg'), userName: "Quiche Hollandaise", userMessage: "Quisque blandit arcu quis turpis tincidunt facilisis…", time: "15 min", unRead: "1", active: true, unreadShow: true,color:"#77838F" },
         { profile: require('./../../img/messageProfile.jpg'), userName: "Jake Weary", userMessage: "Sed ligula erat, dignissim sit at amet dictum id, iaculis… ", time: "32 min", unRead: "3", active: true, unreadShow: true,color:"white" },
@@ -22,7 +22,7 @@ export default function Message() {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {chatCard.map((v, i) => {
                         return (
-                            <TouchableOpacity style={styles._chat_main}>
+                            <TouchableOpacity style={styles._chat_main} onPress={() => props.path.navigate("Chat")}>
                                 <View style={styles._profile_main}>
                                     <Image source={v.profile} style={styles._profile_images} />
                                     {v.active ?

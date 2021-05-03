@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Feather, FontAwesome, SimpleLineIcons, FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { useState } from "react";
-export default function Setting() {
+export default function Setting(props) {
     const [userName, onChangeUserName] = React.useState("");
     const [active, setActive] = useState(0);
     return (
@@ -37,7 +37,7 @@ export default function Setting() {
                             <SimpleLineIcons name="calculator" size={24} color="white" />
                             <Text style={styles._setting_heading}>Payment Calculator</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles._setting}>
+                        <TouchableOpacity style={styles._setting}  onPress={() => props.navigation.navigate("Login")}>
                             <FontAwesome5 name="user-alt" size={24} color="white" />
                             <Text style={styles._setting_heading}>Sign in / Register</Text>
                         </TouchableOpacity>

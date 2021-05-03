@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, MaterialIcons, Ionicons, AntDesign, FontAwesome,Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-export default function Signup() {
+export default function Signup(props) {
     const [userName, onChangeUserName] = React.useState("");
     const [gmial, onChangeGmail] = React.useState("");
     const [password, onChangePassword] = React.useState("");
@@ -70,7 +70,7 @@ export default function Signup() {
                     </View>
           
                     {/* <<<<<<<< SIGN IN BUTTON >>>>>>>>> */}
-                    <TouchableOpacity style={styles._sigin_button}>
+                    <TouchableOpacity style={styles._sigin_button} onPress={() => props.navigation.navigate("WhatWouldYouLike")}>
                         <LinearGradient
                             end={[1.0, 0.5]}
                             start={[0.0, 0.5]}
@@ -84,7 +84,7 @@ export default function Signup() {
                     {/* <<<<<<<< SIGN UP >>>>>>>>> */}
                     <View style={styles._sigup_main}>
                         <Text style={styles._signup_des}>Have an Account?</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
                             <Text style={styles._signup_button_text}>Sign In</Text>
                         </TouchableOpacity>
                     </View>

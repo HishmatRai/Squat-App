@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-export default function Message() {
+export default function Message(props) {
     const [userName, onChangeUserName] = React.useState("");
     const [active, setActive] = useState(0);
     return (
@@ -28,7 +28,7 @@ export default function Message() {
                 translucent={true}
             />
             <View style={styles._header}>
-                <TouchableOpacity style={styles._back_button}>
+                <TouchableOpacity style={styles._back_button} onPress={() => props.navigation.goBack()}>
                     <Ionicons name="arrow-back-outline" size={24} color="black" />
                 </TouchableOpacity>
                 <Text style={styles._heading}>Message Details</Text>

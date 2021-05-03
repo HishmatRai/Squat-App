@@ -8,6 +8,7 @@ import Message from './Message/Message';
 import Chat from './Chat/Chat';
 import Setting from './Setting/Setting';
 import FilterMyList from './FilterMyList/FilterMyList';
+import FilterMyMap from './FilterMyMap/FilterMyMap'
 export {
     Login,
     Signup,
@@ -18,5 +19,6 @@ export {
     Message,
     Chat,
     Setting,
-    FilterMyList
+    FilterMyList,
+    FilterMyMap
 }

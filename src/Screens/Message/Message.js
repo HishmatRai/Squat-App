@@ -11,7 +11,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import MessageScreen from "./../../Components/Message/Message";
 import Groups from "./../../Components/Groups/Groups";
 import { useState } from "react";
-export default function Message() {
+export default function Message(props) {
   const [userName, onChangeUserName] = React.useState("");
   const [active, setActive] = useState(0);
   return (
@@ -139,10 +139,10 @@ export default function Message() {
           </View>
           {
              active === 0 ?
-             <MessageScreen />
+             <MessageScreen path={props.navigation}/>
              :
 
-          <Groups />
+          <Groups path={props.navigation}/>
           }
           <View style={{ marginBottom: 10 }}></View>
         </ScrollView>
